@@ -6,31 +6,56 @@
     <title>Itinerario de Viajes</title>
 </head>
 <body>
+    <section class="log-in">
+        <p><img src="https://img.icons8.com/material-outlined/18/000000/user--v1.png" class="icon"/><a href="#"> Log In  </a></p>
+    </section>
     <header>
         <h1>Itinerario de Actividades</h1>
         <label id="date">Fecha</label>
-        <input id="day" type="text">
-
-    </header>
+        <input id="day" type="date">
+ </header>
     <main>
         <section class="captura">
-            <label>Horario de Llegada:</label>
-            <input id="horario" type="text">
-            <label>Lugar:</label>
-            <input id="Lugar" type="text">
-            <label>Tiempo de Estadia:</label>
-            <input id="tiempo_estadia" type="text">
-            <button id="btn_agregar">Agregar</button>
+            <div  id="form-cont" class="form-cont">
+                <div class="form-cont-cap">
+                    <label>Horario de Llegada:</label>
+                    <input id="horario" type="time">
+                </div>
+                <div class="form-cont-cap">
+                    <label>Lugar:</label>
+                    <input id="Lugar" type="text">
+                </div>
+                <div class="form-cont-cap">
+                    <label>Descripcion:</label>
+                    <textarea id="descripcion" type="text" class="input" ></textarea>
+                </div>
+                <div class="form-cont-cap">
+                    <label>Tiempo de Estadia:</label>
+                    <input id="tiempo_estadia" type="text"> 
+                </div>
+            </div>
+            <div>
+                <button onclick="addTask()" id="btn_agregar" class='agregartask' type="submit">Agregar</button>
+            </div> 
         </section>
         <section class="listado-Actividades">
-           <div>
-            <button id="btn_eliminar">Eliminar</button>
-            <button id="btn_modificar">Modificar</button>
-           </div> 
-            
+           <table id="container" class="container">
+            <caption>LISTADO DE ACTIVIDADES</caption>  
+            <thead>
+                <tr>
+                    <td style="display:none;"></td>
+                    <td>Lugar</td>
+                    <td>Descripcion</td>
+                    <td>Horario</td>
+                    <td>Estadia</td>
+                    <td>Fecha</td>
+                    <td></td>
+                </tr>
+            </thead>
+               
+           </table>
         </section>
     </main>
-
     <script src="main.js"></script>
 </body>
 </html>
